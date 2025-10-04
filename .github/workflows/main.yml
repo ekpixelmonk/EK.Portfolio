@@ -17,10 +17,9 @@ jobs:
         id: nuget-cache
         uses: actions/cache@v4
         with:
-          path: ~/.nuget/packages
-          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.sln') }}-cache-5314cf0
+          path: ~/.nuget/packages          
+          key: cache-5314cf0
 
-      # --- FIX IS HERE ---
       - name: prime-cache-5314cf0
         run: |
           echo "Cache hit status is: ${{ steps.nuget-cache.outputs.cache-hit }}"
