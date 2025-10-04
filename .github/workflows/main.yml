@@ -20,8 +20,10 @@ jobs:
           path: ~/.nuget/packages
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.sln') }}-cache-5314cf0
 
+      # --- FIX IS HERE ---
       - name: prime-cache-5314cf0
-        run: echo "Cache hit status is: ${{ steps.nuget-cache.outputs.cache-hit }}"
+        run: |
+          echo "Cache hit status is: ${{ steps.nuget-cache.outputs.cache-hit }}"
       
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v4
